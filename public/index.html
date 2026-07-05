@@ -145,7 +145,7 @@
             <div class="hidden lg:flex space-x-8 text-xs font-semibold uppercase tracking-widest text-slate-500">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#why" class="nav-link">Intuition</a>
-                <a href="#basics" class="nav-link">Keys & Basics</a>
+                <a href="#basics" class="nav-link">Foundations</a>
                 <a href="#sandbox" class="nav-link">Programiz Sandbox</a>
                 <a href="#syntax" class="nav-link">Syntax</a>
                 <a href="#joins" class="nav-link">Joins</a>
@@ -275,22 +275,68 @@
         <section id="basics" class="py-24 px-6 bg-slate-50 border-y border-slate-200">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16 space-y-4">
-                    <h2 class="text-3xl font-bold text-slate-900">Understanding Keys & Basics</h2>
-                    <p class="text-slate-500">How relational systems preserve logic through keys and distinct indexing.
-                    </p>
+                    <h2 class="text-3xl font-bold text-slate-900">Database & SQL Foundations</h2>
+                    <p class="text-slate-500">The core structural concepts and keys that govern relational data systems.</p>
                 </div>
 
                 <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Tables & Fields Card -->
                     <div
-                        class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+                        class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
                         <div>
-                            <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center mb-4 text-xl">
+                            <div class="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center mb-5 text-xl">
+                                🗂️</div>
+                            <h3 class="font-bold text-lg mb-2">Tables & Fields</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                The physical storage blocks. Databases store structured data in <strong>tables</strong> (entities) containing <strong>rows</strong> (records) and <strong>columns</strong> (attributes/fields).
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-400 italic">
+                            Rows represent entities; Columns represent properties.
+                        </div>
+                    </div>
+
+                    <!-- Schema Card -->
+                    <div
+                        class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                        <div>
+                            <div class="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center mb-5 text-xl">
+                                📐</div>
+                            <h3 class="font-bold text-lg mb-2">Database Schema</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                The architectural blueprint of the database. It defines how tables are organized, the columns they contain, data types, and the strict rules or constraints that govern data input.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-400 italic">
+                            The layout and rules of the data ecosystem.
+                        </div>
+                    </div>
+
+                    <!-- Relationships Card -->
+                    <div
+                        class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                        <div>
+                            <div class="w-10 h-10 bg-rose-100 rounded-xl flex items-center justify-center mb-5 text-xl">
+                                🤝</div>
+                            <h3 class="font-bold text-lg mb-2">Table Relationships</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                The logical connections between tables. Established through matching columns to map real-world associations (like a single customer having multiple orders).
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-400 italic">
+                            Enables tables to be combined or joined.
+                        </div>
+                    </div>
+
+                    <!-- PK Card -->
+                    <div
+                        class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                        <div>
+                            <div class="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center mb-5 text-xl">
                                 🔑</div>
                             <h3 class="font-bold text-lg mb-2">Primary Key (PK)</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                A unique column inside a table that functions as the absolute identifier for every row.
-                                It cannot contain duplicate values or null entries (e.g., <code
-                                    class="code-font text-blue-600">customer_id</code> in the Customers table).
+                                A unique column inside a table that functions as the absolute identifier for every row. It cannot contain duplicate values or null entries (e.g., <code class="code-font text-blue-600">customer_id</code>).
                             </p>
                         </div>
                         <div class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-400 italic">
@@ -298,16 +344,15 @@
                         </div>
                     </div>
 
+                    <!-- FK Card -->
                     <div
-                        class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+                        class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
                         <div>
-                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mb-4 text-xl">
+                            <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center mb-5 text-xl">
                                 🔗</div>
                             <h3 class="font-bold text-lg mb-2">Foreign Key (FK)</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                A key in one table that references the Primary Key of another table. It is the
-                                structural glue that allows different datasets to associate reliably (e.g., <code
-                                    class="code-font text-blue-600">customer_id</code> inside the Orders table).
+                                A column in one table that references the Primary Key of another table. It acts as the structural glue to associate records reliably across different datasets.
                             </p>
                         </div>
                         <div class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-400 italic">
@@ -315,21 +360,19 @@
                         </div>
                     </div>
 
+                    <!-- DISTINCT Card -->
                     <div
-                        class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+                        class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
                         <div>
-                            <div
-                                class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4 text-xl">
+                            <div class="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center mb-5 text-xl">
                                 ✨</div>
                             <h3 class="font-bold text-lg mb-2">The DISTINCT Keyword</h3>
                             <p class="text-sm text-slate-600 leading-relaxed">
-                                Used directly after <code class="code-font text-blue-600">SELECT</code> to eliminate
-                                duplicates in the output list. Critical for counting unique elements or collecting clean
-                                lists (e.g., getting a unique roster of operating countries).
+                                Used directly after <code class="code-font text-blue-600">SELECT</code> to eliminate duplicate values from the output. Critical for counting unique elements or collecting clean lists.
                             </p>
                         </div>
                         <div class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-400 italic">
-                            Used as: SELECT DISTINCT country FROM Customers;
+                            Syntax: SELECT DISTINCT country FROM Customers;
                         </div>
                     </div>
                 </div>
@@ -518,19 +561,19 @@
             </div>
         </section>
 
-        <section id="case" class="py-24 px-6 bg-slate-950 text-white relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none">
+        <section id="case" class="py-24 px-6 bg-white text-slate-900 relative overflow-hidden border-b border-slate-200">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl pointer-events-none">
             </div>
-            <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none">
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none">
             </div>
 
             <div class="max-w-7xl mx-auto relative z-10">
                 <div class="border-l-4 border-orange-500 pl-4 mb-8">
-                    <span class="text-orange-500 text-xs font-extrabold uppercase tracking-widest block mb-1">🎓
+                    <span class="text-orange-600 text-xs font-extrabold uppercase tracking-widest block mb-1">🎓
                         Operational Shift</span>
-                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Case Study: Scaling to India's FoodTech
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Case Study: Scaling to India's FoodTech
                         Giants</h2>
-                    <p class="text-slate-400 mt-2 max-w-2xl text-sm leading-relaxed">
+                    <p class="text-slate-600 mt-2 max-w-2xl text-sm leading-relaxed">
                         Now that you've mastered the baseline sandbox from the Programiz editor, let's explore how these
                         exact commands translate directly to managing operations at scale (Zomato/Swiggy simulation
                         across key metros).
@@ -542,33 +585,33 @@
                         class="px-4 py-2 rounded-full border border-orange-500 bg-orange-500 text-white text-xs font-bold transition-all shadow-md">Regional
                         Revenue Audit</button>
                     <button id="btn-case-status" onclick="updateCaseView('status')"
-                        class="px-4 py-2 rounded-full border border-slate-800 bg-slate-900 text-slate-400 text-xs font-bold transition-all hover:bg-slate-800">Delivery
+                        class="px-4 py-2 rounded-full border border-slate-200 bg-white text-slate-600 text-xs font-bold transition-all hover:bg-slate-50">Delivery
                         Fulfillment Metrics</button>
                 </div>
 
                 <div class="grid lg:grid-cols-2 gap-12">
                     <div
-                        class="bg-slate-900/80 border border-slate-800 p-8 rounded-3xl shadow-2xl flex flex-col justify-between">
+                        class="bg-white border border-slate-200 p-8 rounded-3xl shadow-lg flex flex-col justify-between">
                         <div>
                             <div id="case-chart-title"
-                                class="font-bold mb-6 text-sm tracking-wider uppercase text-slate-400">Regional
+                                class="font-bold mb-6 text-sm tracking-wider uppercase text-slate-500">Regional
                                 Performance (INR Lakhs)</div>
                             <div class="chart-container">
                                 <canvas id="caseChart"></canvas>
                             </div>
                         </div>
-                        <p class="text-[11px] text-slate-500 mt-4 leading-normal italic">
+                        <p class="text-[11px] text-slate-400 mt-4 leading-normal italic">
                             *Mock platform simulation showing sales or logistic counts. SQL aggregations form the data
                             models supporting this business viz.
                         </p>
                     </div>
 
                     <div class="space-y-6">
-                        <div class="p-6 bg-orange-500/10 border border-orange-500/20 rounded-2xl">
-                            <h4 class="font-bold text-orange-400 mb-2 flex items-center gap-2 text-sm">
+                        <div class="p-6 bg-orange-50 border border-orange-100 rounded-2xl shadow-sm">
+                            <h4 class="font-bold text-orange-700 mb-2 flex items-center gap-2 text-sm">
                                 <span>💡</span> Executive MBA Insight
                             </h4>
-                            <p id="case-insight" class="text-sm text-slate-300 leading-relaxed">
+                            <p id="case-insight" class="text-sm text-slate-600 leading-relaxed">
                                 Bengaluru processes our highest transactional values (INR 14.2 Lakhs). A simple
                                 aggregated join of regions identifies operational hot spots for commercial resource
                                 allocations.
@@ -583,14 +626,14 @@
             </div>
         </section>
 
-        <section id="ai-tutor" class="py-24 px-6 bg-slate-900 text-white relative border-t border-slate-800">
+        <section id="ai-tutor" class="py-24 px-6 bg-slate-50 text-slate-900 relative border-t border-slate-200">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-12 space-y-3">
                     <span
-                        class="px-3 py-1 bg-blue-500/20 text-blue-400 border border-blue-500/30 rounded-full text-xs font-bold tracking-wider uppercase inline-block">Interactive
+                        class="px-3 py-1 bg-indigo-50 text-indigo-700 border border-indigo-100 rounded-full text-xs font-bold tracking-wider uppercase inline-block">Interactive
                         AI Lab</span>
-                    <h2 class="text-4xl font-bold tracking-tight">Gemini-Powered SQL Copilot</h2>
-                    <p class="text-slate-400 max-w-xl mx-auto text-sm leading-relaxed">
+                    <h2 class="text-4xl font-bold tracking-tight text-slate-900">Gemini-Powered SQL Copilot</h2>
+                    <p class="text-slate-600 max-w-xl mx-auto text-sm leading-relaxed">
                         Get instant SQL logic check reviews, commands translation, or explanations optimized for
                         business administration students.
                     </p>
@@ -599,19 +642,19 @@
                 <div class="grid lg:grid-cols-12 gap-8">
                     <!-- Control panel deck -->
                     <div class="lg:col-span-5 space-y-6">
-                        <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 shadow-xl">
-                            <h3 class="font-bold text-base mb-4 text-blue-400 flex items-center gap-2">
+                        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-md">
+                            <h3 class="font-bold text-base mb-4 text-indigo-600 flex items-center gap-2">
                                 <span>🧠</span> Dinkar Labs AI Tutor
                             </h3>
 
                             <!-- Mode selectors -->
                             <div class="grid grid-cols-2 gap-2 mb-4">
                                 <button id="btn-mode-generator" onclick="setAIMode('generator')"
-                                    class="p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-2 bg-blue-600 border-blue-700 text-white shadow">
+                                    class="p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-2 bg-indigo-600 border-indigo-700 text-white shadow">
                                     <span>📝</span> Text to SQL
                                 </button>
                                 <button id="btn-mode-explainer" onclick="setAIMode('explainer')"
-                                    class="p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-2 bg-slate-700/40 border-slate-600 text-slate-300">
+                                    class="p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-2 bg-slate-50 border-slate-200 text-slate-500 hover:bg-slate-100">
                                     <span>💡</span> Query Explainer
                                 </button>
                             </div>
@@ -619,15 +662,15 @@
                             <div class="space-y-4">
                                 <div>
                                     <label
-                                        class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2"
+                                        class="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2"
                                         id="ai-input-label">Describe your query requirements:</label>
                                     <textarea id="ai-input-text" rows="4"
-                                        class="w-full rounded-xl bg-slate-950 border border-slate-800 p-3 text-sm text-slate-200 focus:outline-none focus:border-blue-500 code-font"
+                                        class="w-full rounded-xl bg-slate-50 border border-slate-200 p-3 text-sm text-slate-800 focus:outline-none focus:border-indigo-500 code-font"
                                         placeholder="e.g., Get a count of all unique customers who reside in the USA from the Customers table."></textarea>
                                 </div>
 
                                 <button id="btn-submit-ai" onclick="submitAIRequest()"
-                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl text-sm transition-all shadow-lg flex items-center justify-center gap-2">
+                                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-xl text-sm transition-all shadow-lg flex items-center justify-center gap-2">
                                     <span id="ai-btn-text">Generate SQL Query</span>
                                     <span id="ai-loading-spinner"
                                         class="hidden animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></span>
@@ -637,16 +680,16 @@
 
                         <!-- System details -->
                         <div
-                            class="bg-slate-800/40 border border-slate-800 rounded-2xl p-5 text-xs text-slate-400 space-y-3">
-                            <span class="font-semibold text-slate-300">Active Classroom Schema Context supplied to
+                            class="bg-white border border-slate-200 rounded-2xl p-5 text-xs text-slate-600 space-y-3 shadow-sm">
+                            <span class="font-semibold text-slate-700">Active Classroom Schema Context supplied to
                                 Gemini:</span>
                             <div
-                                class="code-font text-[10px] space-y-1 bg-slate-950 p-3 rounded-lg border border-slate-800">
-                                <p><strong class="text-blue-400">Customers:</strong> customer_id [PK], first_name,
+                                class="code-font text-[10px] space-y-1 bg-slate-50 p-3 rounded-lg border border-slate-200">
+                                <p><strong class="text-indigo-600">Customers:</strong> customer_id [PK], first_name,
                                     last_name, age, country</p>
-                                <p><strong class="text-blue-400">Orders:</strong> order_id [PK], item, amount,
+                                <p><strong class="text-indigo-600">Orders:</strong> order_id [PK], item, amount,
                                     customer_id [FK]</p>
-                                <p><strong class="text-blue-400">Shippings:</strong> shipping_id [PK], status, customer
+                                <p><strong class="text-indigo-600">Shippings:</strong> shipping_id [PK], status, customer
                                     [FK]</p>
                             </div>
                             <div class="text-[10px] text-slate-500 italic">
@@ -658,28 +701,27 @@
                     <!-- Sandbox Output Console -->
                     <div class="lg:col-span-7 flex flex-col h-full min-h-[420px]">
                         <div
-                            class="bg-slate-950 border border-slate-800 rounded-2xl flex-1 flex flex-col overflow-hidden shadow-2xl">
+                            class="bg-white border border-slate-200 rounded-2xl flex-1 flex flex-col overflow-hidden shadow-lg">
                             <!-- Terminal top header -->
                             <div
-                                class="bg-slate-950 px-6 py-3.5 border-b border-slate-850 flex justify-between items-center">
+                                class="bg-slate-50 px-6 py-3.5 border-b border-slate-200 flex justify-between items-center">
                                 <div class="flex items-center gap-2">
-                                    <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
-                                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">Dinkar
+                                    <span class="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-pulse"></span>
+                                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-600">Dinkar
                                         Labs
                                         AI
                                     </span>
                                 </div>
-                                <span class="text-[9px] font-mono text-slate-600">ENGINE: gemini-3-flash-preview</span>
+                                <span class="text-[9px] font-mono text-slate-550">ENGINE: gemini-3-flash-preview</span>
                             </div>
 
                             <!-- Output dynamic workspace -->
                             <div class="p-6 overflow-y-auto flex-1 space-y-4" id="ai-response-container">
-                                <div class="text-slate-400 text-xs leading-relaxed space-y-2" id="ai-response-intro">
-                                    <p class="font-bold text-blue-400 text-sm">Welcome to the NMIMS MBA Preparatory
-                                        Assistant!</p>
+                                <div class="text-slate-600 text-xs leading-relaxed space-y-2" id="ai-response-intro">
+                                    <p class="font-bold text-indigo-600 text-sm">Welcome to the NMIMS SQL Copilot!</p>
                                     <p>Use the action board to query or explain SQL code blocks live. Every output
                                         generated will correspond directly to the programiz online playground
-                                        configurations from <strong class="text-blue-500 font-semibold">Programiz
+                                        configurations from <strong class="text-indigo-600 font-semibold">Programiz
                                             Schema</strong> so you can instantly verify accuracy.</p>
                                 </div>
                                 <div class="hidden" id="ai-response-box">
@@ -978,12 +1020,12 @@
                     scales: {
                         y: {
                             beginAtZero: true,
-                            grid: { color: '#334155' },
-                            ticks: { color: '#94a3b8', font: { size: 10 } }
+                            grid: { color: '#e2e8f0' },
+                            ticks: { color: '#475569', font: { size: 10 } }
                         },
                         x: {
                             grid: { display: false },
-                            ticks: { color: '#94a3b8', font: { size: 10 } }
+                            ticks: { color: '#475569', font: { size: 10 } }
                         }
                     }
                 }
@@ -1001,13 +1043,13 @@
 
             if (type === 'revenue') {
                 btnRev.className = "px-4 py-2 rounded-full border border-orange-500 bg-orange-500 text-white text-xs font-bold transition-all shadow-md";
-                btnStas.className = "px-4 py-2 rounded-full border border-slate-800 bg-slate-900 text-slate-400 text-xs font-bold transition-all hover:bg-slate-800";
+                btnStas.className = "px-4 py-2 rounded-full border border-slate-200 bg-white text-slate-600 text-xs font-bold transition-all hover:bg-slate-50";
 
                 title.innerText = 'Platform Revenue Performance by Hub (INR Lakhs)';
                 insight.innerText = "Bengaluru emerges as our primary operational hub generating ₹14.2M. Aggregating transaction values across unified relational nodes allows managers to make fast commercial allocation decisions.";
             } else {
                 btnStas.className = "px-4 py-2 rounded-full border border-orange-500 bg-orange-500 text-white text-xs font-bold transition-all shadow-md";
-                btnRev.className = "px-4 py-2 rounded-full border border-slate-800 bg-slate-900 text-slate-400 text-xs font-bold transition-all hover:bg-slate-800";
+                btnRev.className = "px-4 py-2 rounded-full border border-slate-200 bg-white text-slate-600 text-xs font-bold transition-all hover:bg-slate-50";
 
                 title.innerText = 'Active Supply Chain Dispatch Metrics';
                 insight.innerText = "Fulfillment tickets reveal healthy delivery logs in Mumbai/Bengaluru. Merging logistics status codes identifies region-specific blocks.";
@@ -1016,9 +1058,9 @@
             queries.innerHTML = '';
             caseQueries[type].forEach(q => {
                 queries.innerHTML += `
-                    <div class="p-5 bg-slate-900 border border-slate-800 rounded-2xl">
-                        <p class="text-xs font-bold text-orange-400 mb-2 uppercase tracking-wide">${q.title}</p>
-                        <pre class="code-font text-xs text-slate-300 bg-slate-950 p-3.5 rounded border border-slate-850 overflow-x-auto">${q.code}</pre>
+                    <div class="p-5 bg-white border border-slate-200 rounded-2xl shadow-sm">
+                        <p class="text-xs font-bold text-orange-600 mb-2 uppercase tracking-wide">${q.title}</p>
+                        <pre class="code-font text-xs text-slate-800 bg-slate-50 p-3.5 rounded border border-slate-200 overflow-x-auto">${q.code}</pre>
                     </div>
                 `;
             });
@@ -1034,14 +1076,14 @@
             const submitBtnText = document.getElementById('ai-btn-text');
 
             if (mode === 'generator') {
-                btnGen.className = "p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-2 bg-blue-600 border-blue-700 text-white shadow";
-                btnExp.className = "p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-2 bg-slate-700/40 border-slate-600 text-slate-300";
+                btnGen.className = "p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-2 bg-indigo-600 border-indigo-700 text-white shadow";
+                btnExp.className = "p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-2 bg-slate-50 border-slate-200 text-slate-500 hover:bg-slate-100";
                 textInput.placeholder = "e.g., Select the country and total amount of orders from USA in the database.";
                 inputLabel.innerText = "Describe your desired SQL command:";
                 submitBtnText.innerText = "Generate SQL Query";
             } else {
-                btnExp.className = "p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-2 bg-blue-600 border-blue-700 text-white shadow";
-                btnGen.className = "p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-2 bg-slate-700/40 border-slate-600 text-slate-300";
+                btnExp.className = "p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-2 bg-indigo-600 border-indigo-700 text-white shadow";
+                btnGen.className = "p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-2 bg-slate-50 border-slate-200 text-slate-500 hover:bg-slate-100";
                 textInput.placeholder = "e.g., SELECT Customers.first_name, SUM(amount) FROM Orders INNER JOIN Customers ON Orders.customer_id = Customers.customer_id GROUP BY Customers.first_name;";
                 inputLabel.innerText = "Paste the SQL Query to Explain:";
                 submitBtnText.innerText = "Explain SQL Logic";
@@ -1172,31 +1214,31 @@
                 responseBox.classList.remove('hidden');
 
                 let parsedResult = resultText
-                    .replace(/```sql([\s\S]*?)```/g, '<pre class="code-font text-xs text-blue-400 bg-slate-900 p-4 rounded-xl border border-slate-800 overflow-x-auto my-3">$1</pre>')
-                    .replace(/```([\s\S]*?)```/g, '<pre class="code-font text-xs bg-slate-900 p-4 rounded-xl border border-slate-850 overflow-x-auto my-3">$1</pre>')
-                    .replace(/\*\*([^*]+)\*\?/g, '<strong class="text-blue-400">$1</strong>')
-                    .replace(/\* ([^*]+)\n/g, '<li class="ml-4 list-disc text-xs text-slate-300 mb-1">$1</li>');
+                    .replace(/```sql([\s\S]*?)```/g, '<pre class="code-font text-xs text-indigo-700 bg-slate-50 p-4 rounded-xl border border-slate-200 overflow-x-auto my-3 font-semibold">$1</pre>')
+                    .replace(/```([\s\S]*?)```/g, '<pre class="code-font text-xs text-slate-850 bg-slate-50 p-4 rounded-xl border border-slate-200 overflow-x-auto my-3 font-semibold">$1</pre>')
+                    .replace(/\*\*([^*]+)\*\?/g, '<strong class="text-indigo-700 font-bold">$1</strong>')
+                    .replace(/\* ([^*]+)\n/g, '<li class="ml-4 list-disc text-xs text-slate-700 mb-1">$1</li>');
 
 
                 responseBox.innerHTML = `
                     <div class="space-y-4">
 
-                        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">
+                        <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                            <span class="text-xs font-bold text-indigo-700 uppercase tracking-wider">
                                 Dinkar Labs AI Answer
                             </span>
 
                             <button onclick="copyToClipboardText()"
-                                class="text-[10px] bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1 rounded-lg transition">
+                                class="text-[10px] bg-slate-50 hover:bg-slate-100 text-slate-700 px-3 py-1 rounded-lg transition border border-slate-200 font-semibold">
                                 📋 Copy SQL
                             </button>
                         </div>
 
-                        <div class="text-slate-300 text-sm leading-relaxed space-y-3">
+                        <div class="text-slate-800 text-sm leading-relaxed space-y-3">
                             ${parsedResult}
                         </div>
 
-                        <div class="border-t border-slate-800 pt-4 mt-4">
+                        <div class="border-t border-slate-200 pt-4 mt-4">
 
                             <p class="text-[11px] text-slate-500 italic leading-relaxed">
                                 ⚠️ AI responses may occasionally be inaccurate. Always validate SQL by executing it in the Programiz SQL Playground.
