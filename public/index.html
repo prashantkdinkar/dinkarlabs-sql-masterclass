@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL for Business Translators | NMIMS Preparatory Session </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0f172a;
+            --orange: #fc8019;
+            --cream: #fdfdfb;
+            --slate: #475569;
+            --programiz-blue: #3b82f6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--navy);
+            scroll-behavior: smooth;
+        }
+
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--orange);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 350px;
+        }
+
+        .syntax-tab.active {
+            border-left: 4px solid var(--programiz-blue);
+            background-color: #f1f5f9;
+            color: var(--navy);
+        }
+
+        .venn-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            mix-blend-mode: multiply;
+            transition: all 0.5s ease;
+        }
+
+        /* Custom scrollbar configurations */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="nmims.jpg" alt="NMIMS Logo" class="w-10 h-10 object-contain" />
+
+                <span class="font-bold tracking-tight text-slate-900 text-sm">
+                    Preparatory Sessions for SQL
+                </span>
+            </div>
+
+            <div class="hidden lg:flex space-x-8 text-xs font-semibold uppercase tracking-widest text-slate-500">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#why" class="nav-link">Intuition</a>
+                <a href="#basics" class="nav-link">Keys & Basics</a>
+                <a href="#sandbox" class="nav-link">Programiz Sandbox</a>
+                <a href="#syntax" class="nav-link">Syntax</a>
+                <a href="#joins" class="nav-link">Joins</a>
+                <a href="#case" class="nav-link text-orange-600 font-bold">FoodTech Case Study</a>
+                <a href="#ai-tutor" class="nav-link text-indigo-600 font-bold flex items-center gap-1">
+                    <span class="inline-block w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+                    AI Lab
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-16">
+        <section id="home" class="min-h-[85vh] flex items-center px-6 bg-slate-50">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full py-12">
+                <div class="space-y-8">
+                    <div
+                        class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold uppercase tracking-wider">
+                        Preparatory Masterclass
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
+                        SQL for <span class="text-blue-600">Business Translators</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-lg leading-relaxed">
+                        Bridging raw database tables and operational leadership decisions. Designed specifically for the
+                        incoming 2026-28 batch of MBA DT & MBA BA at NMIMS.
+                    </p>
+                    <div
+                        class="flex items-center space-x-4 p-6 bg-white rounded-2xl shadow-sm border border-slate-100 w-fit">
+                        <img src="PFI_8464-EDIT.jpg" alt="Prashant Dinkar"
+                            class="w-16 h-16 rounded-full object-cover shadow-md border-2 border-white" />
+                        <div>
+                            <p class="font-bold text-navy">Prashant Dinkar</p>
+                            <p class="text-sm text-slate-500 font-medium">Data Science & AI Consultant</p>
+                            <p class="text-xs font-semibold text-blue-600 mt-1 uppercase tracking-wider">8+ Years
+                                Experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative hidden md:block">
+                    <div class="absolute -top-10 -left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl"></div>
+                    <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl"></div>
+                    <div class="relative glass-card p-8 rounded-3xl space-y-4 shadow-xl">
+                        <div class="flex space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                        </div>
+                        <div class="code-font text-sm text-slate-700 leading-6">
+                            <span class="text-blue-600 font-bold">SELECT</span> first_name, country<br>
+                            <span class="text-blue-600 font-bold">FROM</span> Customers<br>
+                            <span class="text-blue-600 font-bold">WHERE</span> age >= 25<br>
+                            <span class="text-blue-600 font-bold">ORDER BY</span> first_name <span
+                                class="text-blue-600 font-bold">ASC</span>;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why" class="py-24 px-6 bg-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16 space-y-4">
+                    <h2 class="text-3xl font-bold text-slate-900">Beyond the Spreadsheet</h2>
+                    <p class="text-slate-500">Why SQL is the foundational infrastructure for data-driven decisions.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+                            <span class="text-2xl">📊</span>
+                        </div>
+                        <h3 class="font-bold mb-3">Scale & Performance</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Spreadsheets slow to a crawl near 1 million
+                            rows. Databases handle hundreds of millions seamlessly, enabling real-time metrics for
+                            high-volume enterprise pipelines.</p>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                            <span class="text-2xl">🔒</span>
+                        </div>
+                        <h3 class="font-bold mb-3">Data Integrity</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">In Excel, a single manual cell edit or
+                            drag-and-drop error can corrupt an entire report. SQL enforces strict database schemas,
+                            relations, and reproducibility standards.</p>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                            <span class="text-2xl">🔗</span>
+                        </div>
+                        <h3 class="font-bold mb-3">Relational Structure</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Instead of duplicating information in one
+                            large, messy flat sheet, databases normalize records across specialized tables and
+                            reconstruct linkages on request.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="basics" class="py-24 px-6 bg-slate-50 border-y border-slate-200">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 space-y-4">
+                    <h2 class="text-3xl font-bold text-slate-900">Understanding Keys & Basics</h2>
+                    <p class="text-slate-500">How relational systems preserve logic through keys and distinct indexing.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div
+                        class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div
+                                class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center mb-4 text-xl">
+                                🔑</div>
+                            <h3 class="font-bold text-lg mb-2">Primary Key (PK)</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                A unique column inside a table that functions as the absolute identifier for every row.
+                                It cannot contain duplicate values or null entries (e.g., <code
+                                    class="code-font text-blue-600">customer_id</code> in the Customers table).
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-400 italic">
+                            Guarantees identity and look-up speed.
+                        </div>
+                    </div>
+
+                    <div
+                        class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-4 text-xl">
+                                🔗</div>
+                            <h3 class="font-bold text-lg mb-2">Foreign Key (FK)</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                A key in one table that references the Primary Key of another table. It is the
+                                structural glue that allows different datasets to associate reliably (e.g., <code
+                                    class="code-font text-blue-600">customer_id</code> inside the Orders table).
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-400 italic">
+                            Enforces relational integrity between tables.
+                        </div>
+                    </div>
+
+                    <div
+                        class="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div
+                                class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4 text-xl">
+                                ✨</div>
+                            <h3 class="font-bold text-lg mb-2">The DISTINCT Keyword</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Used directly after <code class="code-font text-blue-600">SELECT</code> to eliminate
+                                duplicates in the output list. Critical for counting unique elements or collecting clean
+                                lists (e.g., getting a unique roster of operating countries).
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-400 italic">
+                            Used as: SELECT DISTINCT country FROM Customers;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sandbox" class="py-24 px-6 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5 space-y-6">
+                        <div
+                            class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold uppercase tracking-wider">
+                            Classroom Ground Truth
+                        </div>
+                        <h2 class="text-3xl font-bold text-slate-900">The Programiz Online Sandbox</h2>
+                        <p class="text-slate-600 leading-relaxed">
+                            To ensure direct alignment with your live learning environment, all our baseline syntax,
+                            drills, and operations correspond to the sandbox tables inside the Programiz online editor.
+                        </p>
+                        <div
+                            class="p-6 bg-slate-50 border border-slate-200 rounded-2xl space-y-4 text-sm text-slate-600">
+                            <p class="flex items-start gap-2">
+                                <span class="text-blue-500 font-bold">1. Customers Table</span>
+                                <span class="text-xs text-slate-400 mt-0.5">(PK: customer_id | Fields: first_name,
+                                    last_name, age, country)</span>
+                            </p>
+                            <p class="flex items-start gap-2">
+                                <span class="text-blue-500 font-bold">2. Orders Table</span>
+                                <span class="text-xs text-slate-400 mt-0.5">(PK: order_id | FK: customer_id | Fields:
+                                    item, amount)</span>
+                            </p>
+                            <p class="flex items-start gap-2">
+                                <span class="text-blue-500 font-bold">3. Shippings Table</span>
+                                <span class="text-xs text-slate-400 mt-0.5">(PK: shipping_id | FK: customer | Fields:
+                                    status)</span>
+                            </p>
+                        </div>
+                        <div class="text-xs text-slate-400 italic">
+                            Note: We reference the exact schema from programiz to build your baseline confidence before
+                            tackling enterprise challenges.
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 bg-navy rounded-3xl p-8 shadow-2xl text-white relative overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none">
+                        </div>
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3.5 h-3.5 rounded-full bg-blue-500"></span>
+                                <h3 class="font-bold text-sm text-slate-300">Sandbox Schema Blueprint</h3>
+                            </div>
+                            <span
+                                class="text-[10px] font-mono text-blue-400 bg-blue-400/10 px-2 py-1 border border-blue-400/20 rounded">Reference
+                                File: Porgramiz Schema</span>
+                        </div>
+
+                        <div class="space-y-6 text-xs font-mono">
+                            <div class="bg-slate-800/80 border border-slate-700/60 rounded-xl p-4">
+                                <div
+                                    class="text-blue-400 font-bold border-b border-slate-700 pb-1.5 mb-2 flex justify-between">
+                                    <span>TABLE: Customers</span>
+                                    <span class="text-slate-500 text-[10px]">PK: customer_id</span>
+                                </div>
+                                <div class="text-slate-300 space-y-1">
+                                    <p><span class="text-emerald-400">customer_id [int]</span>: 1, 2, 3, 4, 5</p>
+                                    <p><span class="text-slate-400">first_name, last_name</span>: John Doe, Robert Luna,
+                                        David Robinson...</p>
+                                    <p><span class="text-slate-400">age, country</span>: 31 (USA), 22 (USA), 22 (UK), 25
+                                        (UK), 28 (UAE)</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-800/80 border border-slate-700/60 rounded-xl p-4">
+                                <div
+                                    class="text-blue-400 font-bold border-b border-slate-700 pb-1.5 mb-2 flex justify-between">
+                                    <span>TABLE: Orders</span>
+                                    <span class="text-slate-500 text-[10px]">PK: order_id | FK: customer_id</span>
+                                </div>
+                                <div class="text-slate-300 space-y-1">
+                                    <p><span class="text-emerald-400">order_id [int]</span>: 1, 2, 3, 4, 5</p>
+                                    <p><span class="text-slate-400">item, amount</span>: Keyboard ($400), Mouse ($300),
+                                        Monitor ($12000)...</p>
+                                    <p><span class="text-rose-400">customer_id [int]</span>: Links directly to Customers
+                                        PK</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-800/80 border border-slate-700/60 rounded-xl p-4">
+                                <div
+                                    class="text-blue-400 font-bold border-b border-slate-700 pb-1.5 mb-2 flex justify-between">
+                                    <span>TABLE: Shippings</span>
+                                    <span class="text-slate-500 text-[10px]">PK: shipping_id | FK: customer</span>
+                                </div>
+                                <div class="text-slate-300 space-y-1">
+                                    <p><span class="text-emerald-400">shipping_id [int]</span>: 1, 2, 3, 4, 5</p>
+                                    <p><span class="text-slate-400">status</span>: Pending, Delivered</p>
+                                    <p><span class="text-rose-400">customer [int]</span>: Links back to Customers PK</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="syntax" class="py-24 px-6 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900">Interactive Query Library</h2>
+                    <p class="text-slate-500 mt-2">Explore foundational SQL commands mapped strictly onto the Programiz
+                        schema structure.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8">
+                    <div class="lg:col-span-4 flex flex-col space-y-2" id="syntax-nav">
+                        <!-- Navigation tabs loaded dynamically via Javascript -->
+                    </div>
+                    <div
+                        class="lg:col-span-8 bg-slate-900 rounded-3xl p-10 text-white min-h-[450px] relative shadow-xl">
+                        <div class="absolute top-10 right-10 flex space-x-2">
+                            <div class="h-2.5 w-2.5 rounded-full bg-red-400"></div>
+                            <div class="h-2.5 w-2.5 rounded-full bg-yellow-400"></div>
+                            <div class="h-2.5 w-2.5 rounded-full bg-green-400"></div>
+                        </div>
+                        <div id="snippet-content" class="space-y-8">
+                            <!-- Injected by showSyntax Javascript function -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="joins" class="py-24 px-6 bg-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900">Relational Joins Masterclass</h2>
+                    <p class="text-slate-500 mt-2">How different types of SQL JOINS alter the final visual dataset
+                        output.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div
+                        class="flex justify-center relative h-64 items-center bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                        <div id="venn-left"
+                            class="venn-circle bg-blue-500/20 border-2 border-blue-400 absolute left-12">
+                            <span
+                                class="text-blue-900 -translate-x-12 font-bold text-xs uppercase tracking-wider">Customers</span>
+                        </div>
+                        <div id="venn-right"
+                            class="venn-circle bg-indigo-500/20 border-2 border-indigo-400 absolute right-12">
+                            <span
+                                class="text-indigo-900 translate-x-12 font-bold text-xs uppercase tracking-wider">Orders</span>
+                        </div>
+                        <div
+                            class="z-10 text-center font-bold text-navy bg-white/90 backdrop-blur-sm px-4 py-2.5 rounded-xl border border-slate-200 shadow-md text-xs">
+                            <span id="join-viz-title">INNER JOIN</span><br>
+                            <span class="text-[10px] font-normal text-slate-500" id="join-viz-desc">Matching Records
+                                Only</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-bold text-slate-900">Interactive Join Selector</h3>
+
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="updateJoinExplanation('inner')" id="btn-join-inner"
+                                class="px-3 py-1.5 bg-blue-600 text-white rounded-full text-xs font-semibold transition-all shadow-sm">Inner
+                                Join</button>
+                            <button onclick="updateJoinExplanation('left')" id="btn-join-left"
+                                class="px-3 py-1.5 bg-white text-slate-700 border border-slate-200 rounded-full text-xs font-semibold transition-all hover:bg-slate-50">Left
+                                Join</button>
+                            <button onclick="updateJoinExplanation('right')" id="btn-join-right"
+                                class="px-3 py-1.5 bg-white text-slate-700 border border-slate-200 rounded-full text-xs font-semibold transition-all hover:bg-slate-50">Right
+                                Join</button>
+                            <button onclick="updateJoinExplanation('outer')" id="btn-join-outer"
+                                class="px-3 py-1.5 bg-white text-slate-700 border border-slate-200 rounded-full text-xs font-semibold transition-all hover:bg-slate-50">Full
+                                Join</button>
+                        </div>
+
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200" id="join-explanation-box">
+                            <!-- Populated dynamically via Javascript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="case" class="py-24 px-6 bg-slate-950 text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none">
+            </div>
+
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="border-l-4 border-orange-500 pl-4 mb-8">
+                    <span class="text-orange-500 text-xs font-extrabold uppercase tracking-widest block mb-1">🎓
+                        Operational Shift</span>
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Case Study: Scaling to India's FoodTech
+                        Giants</h2>
+                    <p class="text-slate-400 mt-2 max-w-2xl text-sm leading-relaxed">
+                        Now that you've mastered the baseline sandbox from the Programiz editor, let's explore how these
+                        exact commands translate directly to managing operations at scale (Zomato/Swiggy simulation
+                        across key metros).
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <button id="btn-case-revenue" onclick="updateCaseView('revenue')"
+                        class="px-4 py-2 rounded-full border border-orange-500 bg-orange-500 text-white text-xs font-bold transition-all shadow-md">Regional
+                        Revenue Audit</button>
+                    <button id="btn-case-status" onclick="updateCaseView('status')"
+                        class="px-4 py-2 rounded-full border border-slate-800 bg-slate-900 text-slate-400 text-xs font-bold transition-all hover:bg-slate-800">Delivery
+                        Fulfillment Metrics</button>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div
+                        class="bg-slate-900/80 border border-slate-800 p-8 rounded-3xl shadow-2xl flex flex-col justify-between">
+                        <div>
+                            <div id="case-chart-title"
+                                class="font-bold mb-6 text-sm tracking-wider uppercase text-slate-400">Regional
+                                Performance (INR Lakhs)</div>
+                            <div class="chart-container">
+                                <canvas id="caseChart"></canvas>
+                            </div>
+                        </div>
+                        <p class="text-[11px] text-slate-500 mt-4 leading-normal italic">
+                            *Mock platform simulation showing sales or logistic counts. SQL aggregations form the data
+                            models supporting this business viz.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="p-6 bg-orange-500/10 border border-orange-500/20 rounded-2xl">
+                            <h4 class="font-bold text-orange-400 mb-2 flex items-center gap-2 text-sm">
+                                <span>💡</span> Executive MBA Insight
+                            </h4>
+                            <p id="case-insight" class="text-sm text-slate-300 leading-relaxed">
+                                Bengaluru processes our highest transactional values (INR 14.2 Lakhs). A simple
+                                aggregated join of regions identifies operational hot spots for commercial resource
+                                allocations.
+                            </p>
+                        </div>
+
+                        <div class="space-y-4" id="case-query-list">
+                            <!-- Populated dynamically based on selected Case state -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-tutor" class="py-24 px-6 bg-slate-900 text-white relative border-t border-slate-800">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12 space-y-3">
+                    <span
+                        class="px-3 py-1 bg-blue-500/20 text-blue-400 border border-blue-500/30 rounded-full text-xs font-bold tracking-wider uppercase inline-block">Interactive
+                        AI Lab</span>
+                    <h2 class="text-4xl font-bold tracking-tight">Gemini-Powered SQL Copilot</h2>
+                    <p class="text-slate-400 max-w-xl mx-auto text-sm leading-relaxed">
+                        Get instant SQL logic check reviews, commands translation, or explanations optimized for
+                        business administration students.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8">
+                    <!-- Control panel deck -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-6 shadow-xl">
+                            <h3 class="font-bold text-base mb-4 text-blue-400 flex items-center gap-2">
+                                <span>🧠</span> AI Classroom Deck
+                            </h3>
+
+                            <!-- Mode selectors -->
+                            <div class="grid grid-cols-2 gap-2 mb-4">
+                                <button id="btn-mode-generator" onclick="setAIMode('generator')"
+                                    class="p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-2 bg-blue-600 border-blue-700 text-white shadow">
+                                    <span>📝</span> Text to SQL
+                                </button>
+                                <button id="btn-mode-explainer" onclick="setAIMode('explainer')"
+                                    class="p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-2 bg-slate-700/40 border-slate-600 text-slate-300">
+                                    <span>💡</span> Query Explainer
+                                </button>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div>
+                                    <label
+                                        class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2"
+                                        id="ai-input-label">Describe your query requirements:</label>
+                                    <textarea id="ai-input-text" rows="4"
+                                        class="w-full rounded-xl bg-slate-950 border border-slate-800 p-3 text-sm text-slate-200 focus:outline-none focus:border-blue-500 code-font"
+                                        placeholder="e.g., Get a count of all unique customers who reside in the USA from the Customers table."></textarea>
+                                </div>
+
+                                <button id="btn-submit-ai" onclick="submitAIRequest()"
+                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl text-sm transition-all shadow-lg flex items-center justify-center gap-2">
+                                    <span id="ai-btn-text">Generate SQL Query</span>
+                                    <span id="ai-loading-spinner"
+                                        class="hidden animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- System details -->
+                        <div
+                            class="bg-slate-800/40 border border-slate-800 rounded-2xl p-5 text-xs text-slate-400 space-y-3">
+                            <span class="font-semibold text-slate-300">Active Classroom Schema Context supplied to
+                                Gemini:</span>
+                            <div
+                                class="code-font text-[10px] space-y-1 bg-slate-950 p-3 rounded-lg border border-slate-800">
+                                <p><strong class="text-blue-400">Customers:</strong> customer_id [PK], first_name,
+                                    last_name, age, country</p>
+                                <p><strong class="text-blue-400">Orders:</strong> order_id [PK], item, amount,
+                                    customer_id [FK]</p>
+                                <p><strong class="text-blue-400">Shippings:</strong> shipping_id [PK], status, customer
+                                    [FK]</p>
+                            </div>
+                            <div class="text-[10px] text-slate-500 italic">
+                                Alignment key: programiz sandbox schema.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sandbox Output Console -->
+                    <div class="lg:col-span-7 flex flex-col h-full min-h-[420px]">
+                        <div
+                            class="bg-slate-950 border border-slate-800 rounded-2xl flex-1 flex flex-col overflow-hidden shadow-2xl">
+                            <!-- Terminal top header -->
+                            <div
+                                class="bg-slate-950 px-6 py-3.5 border-b border-slate-850 flex justify-between items-center">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
+                                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">AI
+                                        Response Engine</span>
+                                </div>
+                                <span class="text-[9px] font-mono text-slate-600">ENGINE: gemini-3-flash-preview</span>
+                            </div>
+
+                            <!-- Output dynamic workspace -->
+                            <div class="p-6 overflow-y-auto flex-1 space-y-4" id="ai-response-container">
+                                <div class="text-slate-400 text-xs leading-relaxed space-y-2" id="ai-response-intro">
+                                    <p class="font-bold text-blue-400 text-sm">Welcome to the NMIMS MBA Preparatory
+                                        Assistant!</p>
+                                    <p>Use the action board to query or explain SQL code blocks live. Every output
+                                        generated will correspond directly to the programiz online playground
+                                        configurations from <strong class="text-blue-500 font-semibold">Programiz
+                                            Schema</strong> so you can instantly verify accuracy.</p>
+                                </div>
+                                <div class="hidden" id="ai-response-box">
+                                    <!-- Populated via Gemini API response parsing -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-950 text-white py-12 px-6 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left space-y-1">
+                <p class="font-bold text-base">MBA Preparatory Session on SQL</p>
+                <p class="text-slate-500 text-xs font-medium">NMIMS Mumbai Campus | Batch 2026-28 | Business Translators
+                    Suite</p>
+            </div>
+            <div class="flex space-x-8 text-xs font-semibold text-slate-500 uppercase tracking-widest">
+                <div class="text-center">
+                    <p class="text-slate-400 mb-0.5">Session 1</p>
+                    <p class="text-[10px]">Data Slicing & Keys</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-slate-400 mb-0.5">Session 2</p>
+                    <p class="text-[10px]">Logical Aggregations & Joins</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Term Dictionary mappings ---
+        const syntaxData = [
+            {
+                id: 'select',
+                name: 'SELECT, DISTINCT & FROM',
+                code: 'SELECT DISTINCT country \nFROM Customers;',
+                intent: 'Scope selection. SELECT isolates column vectors, DISTINCT removes repeating attributes (e.g. unique countries), and FROM designates the target database table.',
+                tip: 'Think of this as filtering column views in Excel to show only unique regional boundaries.'
+            },
+            {
+                id: 'where',
+                name: 'WHERE (Row Filters)',
+                code: 'SELECT item, amount \nFROM Orders \nWHERE amount >= 400;',
+                intent: 'Exclude rows according to specific conditional arguments BEFORE any aggregations apply.',
+                tip: 'Great for isolating higher-priced hardware orders (Keyboard/Monitor) out of your list.'
+            },
+            {
+                id: 'orderby',
+                name: 'ORDER BY (Sort Control)',
+                code: 'SELECT item, amount \nFROM Orders \nORDER BY amount DESC;',
+                intent: 'Sequence outputs alphabetically or numerically. Default is ascending (ASC), use DESC for descending listings.',
+                tip: 'Perfect for instantly highlighting your most expensive hardware tickets.'
+            },
+            {
+                id: 'groupby',
+                name: 'GROUP BY (Pivot Summary)',
+                code: 'SELECT country, COUNT(customer_id) AS total_customers \nFROM Customers \nGROUP BY country;',
+                intent: 'Collapse list records based on categorical attributes to yield structural KPI counts or mathematics.',
+                tip: 'Behaves exactly like an Excel Pivot Table grouping row records by matching Country names.'
+            },
+            {
+                id: 'having',
+                name: 'HAVING (Aggregate Filter)',
+                code: 'SELECT customer_id, SUM(amount) AS total_spent \nFROM Orders \nGROUP BY customer_id \nHAVING SUM(amount) > 500;',
+                intent: 'Apply logical filters to aggregated datasets. WHERE filters rows before grouping; HAVING filters categories after grouping calculations are performed.',
+                tip: 'Crucial for isolating customers whose accumulated orders exceed specific commercial value constraints.'
+            }
+        ];
+
+        // --- RELATIONAL JOIN BLUEPRINTS USING PROGRAMIZ DATA ---
+        const joinExplanations = {
+            inner: {
+                title: "INNER JOIN (The Intersection)",
+                desc: "Yields rows ONLY when matching values exist across both tables. If a customer has made zero orders, or an order refers to a non-existent customer, they are excluded from the output list.",
+                syntax: "SELECT Customers.first_name, Orders.item, Orders.amount \nFROM Customers \nINNER JOIN Orders \n  ON Customers.customer_id = Orders.customer_id;",
+                bgLeft: "bg-blue-500/40",
+                bgRight: "bg-indigo-500/40",
+                blend: "Excludes records lacking cross-matches"
+            },
+            left: {
+                title: "LEFT JOIN (Keep All Left Elements)",
+                desc: "Returns ALL records from the left (first) table, and the matching records from the right table. If there is no match on the right, the result is NULL values on that side.",
+                syntax: "SELECT Customers.first_name, Orders.item \nFROM Customers \nLEFT JOIN Orders \n  ON Customers.customer_id = Orders.customer_id;",
+                bgLeft: "bg-blue-500/60",
+                bgRight: "bg-indigo-500/10",
+                blend: "All customers (even those with 0 orders)"
+            },
+            right: {
+                title: "RIGHT JOIN (Keep All Right Elements)",
+                desc: "Returns ALL records from the right (second) table, and the matching records from the left table. If there is no match on the left, the result is NULL values on that side.",
+                syntax: "SELECT Customers.first_name, Orders.item \nFROM Customers \nRIGHT JOIN Orders \n  ON Customers.customer_id = Orders.customer_id;",
+                bgLeft: "bg-blue-500/10",
+                bgRight: "bg-indigo-500/60",
+                blend: "All orders (even if buyer ID points to nothing)"
+            },
+            outer: {
+                title: "FULL OUTER JOIN (Complete Union)",
+                desc: "Returns all records when there is a match in either left or right table. Missing values on either side are filled with NULLs.",
+                syntax: "SELECT Customers.first_name, Orders.item \nFROM Customers \nFULL OUTER JOIN Orders \n  ON Customers.customer_id = Orders.customer_id;",
+                bgLeft: "bg-blue-500/40",
+                bgRight: "bg-indigo-500/40",
+                blend: "Returns entire combined relational framework"
+            }
+        };
+
+        // --- INDIAN FOODTECH SIMULATOR DATA MODEL FOR THE PIVOTED CASE STUDY ---
+        const caseQueries = {
+            revenue: [
+                { title: 'Regional Revenue Snapshot', code: "SELECT city, SUM(amount_in_lakhs) AS revenue_lakhs \nFROM Foodtech_Orders \nINNER JOIN Cities ON Foodtech_Orders.city_id = Cities.city_id \nGROUP BY city \nORDER BY revenue_lakhs DESC;" },
+                { title: 'High Ticket Foodies (Premium Market)', code: "SELECT customer_name, SUM(amount_in_lakhs) AS personal_spend \nFROM Foodtech_Orders \nINNER JOIN Foodtech_Customers ON Foodtech_Orders.cust_id = Foodtech_Customers.cust_id \nGROUP BY customer_name \nHAVING personal_spend > 5.0;" }
+            ],
+            status: [
+                { title: 'Logistics Bottleneck Audit', code: "SELECT item_category, count(order_id) AS pending_deliveries \nFROM Foodtech_Orders \nINNER JOIN Logistics ON Foodtech_Orders.order_id = Logistics.order_id \nWHERE Logistics.status = 'Pending' \nGROUP BY item_category;" },
+                { title: 'Metro Rider Utilization', code: "SELECT city, status, COUNT(rider_id) AS active_fleet_size \nFROM Riders \nGROUP BY city, status;" }
+            ]
+        };
+
+        let currentChart = null;
+        let aiMode = 'generator';
+
+        // --- STREAMING_CHUNK: Initializing dynamic visual elements... ---
+        function renderSyntaxNav() {
+            const nav = document.getElementById('syntax-nav');
+            nav.innerHTML = '';
+            syntaxData.forEach((item, index) => {
+                const btn = document.createElement('button');
+                btn.className = `syntax-tab text-left p-4 rounded-xl transition-all font-semibold text-xs uppercase tracking-wider ${index === 0 ? 'active' : 'text-slate-500 hover:bg-slate-100'}`;
+                btn.innerHTML = item.name;
+                btn.onclick = () => showSyntax(item.id, btn);
+                nav.appendChild(btn);
+            });
+            showSyntax(syntaxData[0].id);
+        }
+
+        function showSyntax(id, btnElement) {
+            const item = syntaxData.find(s => s.id === id);
+            const content = document.getElementById('snippet-content');
+
+            if (btnElement) {
+                document.querySelectorAll('.syntax-tab').forEach(b => {
+                    b.classList.remove('active');
+                    b.classList.add('text-slate-500', 'hover:bg-slate-100');
+                });
+                btnElement.classList.remove('text-slate-500', 'hover:bg-slate-100');
+                btnElement.classList.add('active');
+            }
+
+            content.innerHTML = `
+                <div class="space-y-4">
+                    <p class="text-blue-400 font-bold tracking-widest text-[10px] uppercase">Business Translation</p>
+                    <h3 class="text-2xl font-bold text-white">${item.name}</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">${item.intent}</p>
+                </div>
+                <div class="bg-slate-950 rounded-2xl p-6 border border-slate-800 shadow-inner">
+                    <pre class="code-font text-emerald-400 text-xs overflow-x-auto">${item.code}</pre>
+                </div>
+                <div class="flex items-start space-x-3 bg-slate-850 p-4 rounded-xl border border-slate-800">
+                    <span class="text-blue-500">💡</span>
+                    <p class="text-xs text-slate-400 leading-relaxed"><span class="text-slate-200 font-semibold">Business Tip:</span> ${item.tip}</p>
+                </div>
+            `;
+        }
+
+        // --- STREAMING_CHUNK: Updating relational diagram states... ---
+        function updateJoinExplanation(type) {
+            const exp = joinExplanations[type];
+
+            ['inner', 'left', 'right', 'outer'].forEach(key => {
+                const btn = document.getElementById(`btn-join-${key}`);
+                if (key === type) {
+                    btn.className = "px-3 py-1.5 bg-blue-600 text-white rounded-full text-xs font-semibold transition-all shadow-sm";
+                } else {
+                    btn.className = "px-3 py-1.5 bg-white text-slate-700 border border-slate-200 rounded-full text-xs font-semibold transition-all hover:bg-slate-50";
+                }
+            });
+
+            // Modify Venn diagram layers
+            const leftCircle = document.getElementById('venn-left');
+            const rightCircle = document.getElementById('venn-right');
+            leftCircle.className = `venn-circle ${exp.bgLeft} border-2 border-blue-400 absolute left-12`;
+            rightCircle.className = `venn-circle ${exp.bgRight} border-2 border-indigo-400 absolute right-12`;
+
+            const vizTitle = document.getElementById('join-viz-title');
+            const vizDesc = document.getElementById('join-viz-desc');
+            vizTitle.innerText = type.toUpperCase() + " JOIN";
+            vizDesc.innerText = exp.blend;
+
+            const target = document.getElementById('join-explanation-box');
+            target.innerHTML = `
+                <h4 class="font-bold text-slate-900 text-sm mb-1.5">${exp.title}</h4>
+                <p class="text-xs text-slate-600 mb-4 leading-relaxed">${exp.desc}</p>
+                <p class="text-[10px] font-bold text-blue-600 mb-1.5 uppercase tracking-wider">Equivalent Programiz query (Reference: Programiz Schema)</p>
+                <pre class="code-font text-xs text-slate-700 bg-slate-100 p-4 rounded-lg overflow-x-auto border border-slate-200">${exp.syntax}</pre>
+            `;
+        }
+
+        // --- STREAMING_CHUNK: Configuring chart and analytical reports for Case Study... ---
+        function initChart(type = 'revenue') {
+            const ctx = document.getElementById('caseChart').getContext('2d');
+            if (currentChart) currentChart.destroy();
+
+            const config = type === 'revenue' ? {
+                labels: ['Mumbai', 'Delhi', 'Bengaluru', 'Pune'],
+                data: [9.8, 5.2, 14.2, 3.1], // INR Lakhs
+                label: 'Order Volume (INR Lakhs)',
+                colors: ['#3b82f6', '#475569', '#fc8019', '#94a3b8']
+            } : {
+                labels: ['Pending Rider Allocation', 'Dispatched', 'Delivered Safely'],
+                data: [150, 420, 1850], // Delivery Counts
+                label: 'Fulfillment Status Metrics',
+                colors: ['#ef4444', '#f59e0b', '#10b981']
+            };
+
+            currentChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: config.labels,
+                    datasets: [{
+                        label: config.label,
+                        data: config.data,
+                        backgroundColor: config.colors,
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: '#334155' },
+                            ticks: { color: '#94a3b8', font: { size: 10 } }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#94a3b8', font: { size: 10 } }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateCaseView(type) {
+            initChart(type);
+            const title = document.getElementById('case-chart-title');
+            const insight = document.getElementById('case-insight');
+            const queries = document.getElementById('case-query-list');
+
+            const btnRev = document.getElementById('btn-case-revenue');
+            const btnStas = document.getElementById('btn-case-status');
+
+            if (type === 'revenue') {
+                btnRev.className = "px-4 py-2 rounded-full border border-orange-500 bg-orange-500 text-white text-xs font-bold transition-all shadow-md";
+                btnStas.className = "px-4 py-2 rounded-full border border-slate-800 bg-slate-900 text-slate-400 text-xs font-bold transition-all hover:bg-slate-800";
+
+                title.innerText = 'Platform Revenue Performance by Hub (INR Lakhs)';
+                insight.innerText = "Bengaluru emerges as our primary operational hub generating ₹14.2M. Aggregating transaction values across unified relational nodes allows managers to make fast commercial allocation decisions.";
+            } else {
+                btnStas.className = "px-4 py-2 rounded-full border border-orange-500 bg-orange-500 text-white text-xs font-bold transition-all shadow-md";
+                btnRev.className = "px-4 py-2 rounded-full border border-slate-800 bg-slate-900 text-slate-400 text-xs font-bold transition-all hover:bg-slate-800";
+
+                title.innerText = 'Active Supply Chain Dispatch Metrics';
+                insight.innerText = "Fulfillment tickets reveal healthy delivery logs in Mumbai/Bengaluru. Merging logistics status codes identifies region-specific blocks.";
+            }
+
+            queries.innerHTML = '';
+            caseQueries[type].forEach(q => {
+                queries.innerHTML += `
+                    <div class="p-5 bg-slate-900 border border-slate-800 rounded-2xl">
+                        <p class="text-xs font-bold text-orange-400 mb-2 uppercase tracking-wide">${q.title}</p>
+                        <pre class="code-font text-xs text-slate-300 bg-slate-950 p-3.5 rounded border border-slate-850 overflow-x-auto">${q.code}</pre>
+                    </div>
+                `;
+            });
+        }
+
+        // --- STREAMING_CHUNK: Managing Gemini API integration states... ---
+        function setAIMode(mode) {
+            aiMode = mode;
+            const btnGen = document.getElementById('btn-mode-generator');
+            const btnExp = document.getElementById('btn-mode-explainer');
+            const textInput = document.getElementById('ai-input-text');
+            const inputLabel = document.getElementById('ai-input-label');
+            const submitBtnText = document.getElementById('ai-btn-text');
+
+            if (mode === 'generator') {
+                btnGen.className = "p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-2 bg-blue-600 border-blue-700 text-white shadow";
+                btnExp.className = "p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-2 bg-slate-700/40 border-slate-600 text-slate-300";
+                textInput.placeholder = "e.g., Select the country and total amount of orders from USA in the database.";
+                inputLabel.innerText = "Describe your desired SQL command:";
+                submitBtnText.innerText = "Generate SQL Query";
+            } else {
+                btnExp.className = "p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-2 bg-blue-600 border-blue-700 text-white shadow";
+                btnGen.className = "p-3 rounded-xl border text-xs font-bold transition-all flex flex-col items-center gap-2 bg-slate-700/40 border-slate-600 text-slate-300";
+                textInput.placeholder = "e.g., SELECT Customers.first_name, SUM(amount) FROM Orders INNER JOIN Customers ON Orders.customer_id = Customers.customer_id GROUP BY Customers.first_name;";
+                inputLabel.innerText = "Paste the SQL Query to Explain:";
+                submitBtnText.innerText = "Explain SQL Logic";
+            }
+        }
+
+        // --- STREAMING_CHUNK: Triggering Gemini Flash engine API calls... ---
+        async function submitAIRequest() {
+            const userText = document.getElementById('ai-input-text').value.trim();
+            if (!userText) {
+                alertToast("Please enter a valid request to generate or explain query operations.");
+                return;
+            }
+
+            const spinner = document.getElementById('ai-loading-spinner');
+            const submitBtn = document.getElementById('btn-submit-ai');
+            const introDiv = document.getElementById('ai-response-intro');
+            const responseBox = document.getElementById('ai-response-box');
+
+            spinner.classList.remove("hidden");
+            submitBtn.disabled = true;
+            submitBtn.classList.add("opacity-70");
+            submitBtn.classList.add("cursor-not-allowed");
+
+            const loadingMessages = [
+                "🧠 Understanding your question...",
+                "📊 Looking at the schema...",
+                "✍️ Writing SQL...",
+                "💡 Preparing explanation..."
+            ];
+
+            let loadingIndex = 0;
+
+            document.getElementById("ai-btn-text").innerText = loadingMessages[0];
+
+            const loadingInterval = setInterval(() => {
+
+                loadingIndex++;
+
+                if (loadingIndex < loadingMessages.length) {
+                    document.getElementById("ai-btn-text").innerText =
+                        loadingMessages[loadingIndex];
+                }
+
+            }, 900);
+
+            let prompt = "";
+            let systemPrompt = "";
+
+            if (aiMode === 'generator') {
+                systemPrompt = `
+                    Act as Prashant Dinkar, a world-class SQL trainer for NMIMS MBA business translators.
+                    The user is referencing the standard Programiz online editor schema from Programiz Schema:
+                    - Customers (customer_id [PK], first_name, last_name, age, country)
+                    - Orders (order_id [PK], item, amount, customer_id [FK])
+                    - Shippings (shipping_id [PK], status, customer [FK])
+
+                    Construct a clean standard SQL query that fulfills the user requirements.
+                    Format the output using simple HTML layout tags. Place the final query inside a clear, styled <code> or <pre> block.
+                    Provide a concise, 2-sentence business context explanation.
+                `;
+                prompt = `Generate a standard SQL query for the following operational request: "${userText}"`;
+            } else {
+                systemPrompt = `
+                    Act as Prashant Dinkar, SQL trainer for NMIMS MBA students.
+                    Deconstruct the user's SQL query step-by-step. Explain what metrics or rows are being filtered, grouped, or joined.
+                    Format the final output cleanly with HTML tags. Include a 'Business Strategy Interpretation' section.
+                `;
+                prompt = `Please deconstruct and explain the logic of this SQL query: "${userText}"`;
+            }
+
+            const apiKey = ""; // Managed dynamically by Canvas environment
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                }
+            };
+
+            let success = false;
+            let resultText = "";
+            let delay = 1000;
+
+            try {
+
+                const response = await fetch("/api/generate", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        prompt: prompt
+                    })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.error || "Something went wrong.");
+                }
+
+                resultText = data.text;
+                success = true;
+
+            } catch (err) {
+
+                console.error(err);
+
+            }
+
+            clearInterval(loadingInterval);
+
+            spinner.classList.add("hidden");
+
+            submitBtn.disabled = false;
+            submitBtn.classList.remove("opacity-70");
+            submitBtn.classList.remove("cursor-not-allowed");
+
+            document.getElementById("ai-btn-text").innerText =
+                aiMode === "generator"
+                    ? "Generate SQL Query"
+                    : "Explain SQL Logic";
+
+            if (success) {
+                introDiv.classList.add('hidden');
+                responseBox.classList.remove('hidden');
+
+                let parsedResult = resultText
+                    .replace(/```sql([\s\S]*?)```/g, '<pre class="code-font text-xs text-blue-400 bg-slate-900 p-4 rounded-xl border border-slate-800 overflow-x-auto my-3">$1</pre>')
+                    .replace(/```([\s\S]*?)```/g, '<pre class="code-font text-xs bg-slate-900 p-4 rounded-xl border border-slate-850 overflow-x-auto my-3">$1</pre>')
+                    .replace(/\*\*([^*]+)\*\?/g, '<strong class="text-blue-400">$1</strong>')
+                    .replace(/\* ([^*]+)\n/g, '<li class="ml-4 list-disc text-xs text-slate-300 mb-1">$1</li>');
+
+                responseBox.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Output Blueprint</span>
+                            <button onclick="copyToClipboardText()" class="text-[9px] bg-slate-800 hover:bg-slate-750 text-slate-300 px-2 py-1 rounded">Copy Code</button>
+                        </div>
+                        <div class="text-slate-300 text-sm leading-relaxed space-y-3">
+                            ${parsedResult}
+                        </div>
+                    </div>
+                `;
+            } else {
+                alertToast("Failed to connect with the AI Tutor. Please retry shortly.");
+            }
+        }
+
+        // --- STREAMING_CHUNK: Toast alert and copy utilities... ---
+        function alertToast(message) {
+            const toast = document.createElement('div');
+            toast.className = "fixed bottom-5 right-5 bg-red-600 text-white px-6 py-3 rounded-xl shadow-2xl z-50 text-xs font-bold transition-all transform translate-y-10 opacity-0";
+            toast.innerText = message;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-10', 'opacity-0');
+            }, 100);
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-10', 'opacity-0');
+                setTimeout(() => toast.remove(), 500);
+            }, 3000);
+        }
+
+        function copyToClipboardText() {
+            const preEl = document.querySelector('#ai-response-box pre');
+            if (!preEl) return;
+            const textToCopy = preEl.innerText;
+
+            const textarea = document.createElement('textarea');
+            textarea.value = textToCopy;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            const toast = document.createElement('div');
+            toast.className = "fixed bottom-5 right-5 bg-emerald-600 text-white px-6 py-3 rounded-xl shadow-2xl z-50 text-xs font-bold";
+            toast.innerText = "SQL query copied to clipboard!";
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 2000);
+        }
+
+        // --- STREAMING_CHUNK: Starting the browser initialization pipeline... ---
+        window.onload = () => {
+            renderSyntaxNav();
+            updateJoinExplanation('inner');
+            updateCaseView('revenue');
+        };
+    </script>
+</body>
+
+</html>
