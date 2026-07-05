@@ -257,6 +257,506 @@
             </div>
         </section>
 
+        <!-- New Section: Business Thinking Through SQL -->
+        <section id="business-thinking" class="py-24 px-6 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16 space-y-4">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Business Thinking Through SQL</h2>
+                    <p class="text-slate-600 text-lg max-w-2xl mx-auto">
+                        Every business decision starts with a question. SQL is the bridge that translates those questions into clear, data-driven decisions.
+                    </p>
+                </div>
+
+                <!-- Accordion Container -->
+                <div class="space-y-5 mb-16">
+                    <!-- Accordion Item 1: Swiggy -->
+                    <div class="border border-slate-200 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+                        <button onclick="toggleAccordion('acc-swiggy')" class="w-full text-left p-6 flex justify-between items-center focus:outline-none group">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110">
+                                    🍔
+                                </div>
+                                <div class="space-y-0.5">
+                                    <span class="text-xs font-bold text-orange-600 uppercase tracking-wider">Swiggy Case</span>
+                                    <h3 class="font-bold text-slate-800 text-base md:text-lg group-hover:text-blue-600 transition-colors">
+                                        How does Swiggy identify its best restaurants?
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2 text-slate-500 shrink-0">
+                                <span class="hidden sm:inline text-xs uppercase tracking-wider font-semibold opacity-70 group-hover:opacity-100 transition-opacity">Learn More</span>
+                                <svg id="icon-acc-swiggy" class="w-5 h-5 transform transition-transform duration-300 text-slate-400 group-hover:text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <!-- Smooth Collapse Container -->
+                        <div id="content-acc-swiggy" class="grid transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0">
+                            <div class="overflow-hidden">
+                                <div class="px-6 pb-6 pt-2 md:px-8 md:pb-8 border-t border-slate-100 bg-slate-50/40 space-y-6">
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div class="space-y-2">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-slate-400">📋</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Business Context</h4>
+                                            </div>
+                                            <p class="text-slate-700 leading-relaxed text-sm">
+                                                Every day, Swiggy processes millions of food orders across thousands of restaurants. Managers want to know which restaurants are generating the highest revenue.
+                                            </p>
+                                        </div>
+                                        <div class="space-y-2 bg-blue-50/30 border border-blue-100/50 p-4 rounded-xl">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-blue-600">❓</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-blue-600">Business Question</h4>
+                                            </div>
+                                            <p class="text-slate-900 font-semibold leading-relaxed text-sm">
+                                                Which restaurants should receive premium promotion next month?
+                                            </p>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-slate-400">⚡</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Why SQL?</h4>
+                                            </div>
+                                            <p class="text-slate-700 leading-relaxed text-sm">
+                                                SQL can summarize millions of orders in seconds and identify the highest revenue-generating restaurants automatically.
+                                            </p>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-slate-400">📈</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Business Outcome</h4>
+                                            </div>
+                                            <div class="flex flex-wrap gap-2 pt-1">
+                                                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full border border-emerald-100">Better marketing decisions</span>
+                                                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full border border-emerald-100">Higher restaurant retention</span>
+                                                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full border border-emerald-100">More revenue</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pt-4 border-t border-slate-100 flex justify-end">
+                                        <a href="#basics" class="inline-flex items-center space-x-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group/btn">
+                                            <span>Start Learning SQL</span>
+                                            <svg class="w-4 h-4 transform transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 2: Amazon -->
+                    <div class="border border-slate-200 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+                        <button onclick="toggleAccordion('acc-amazon')" class="w-full text-left p-6 flex justify-between items-center focus:outline-none group">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110">
+                                    🛒
+                                </div>
+                                <div class="space-y-0.5">
+                                    <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Amazon Case</span>
+                                    <h3 class="font-bold text-slate-800 text-base md:text-lg group-hover:text-blue-600 transition-colors">
+                                        How does Amazon identify loyal customers?
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2 text-slate-500 shrink-0">
+                                <span class="hidden sm:inline text-xs uppercase tracking-wider font-semibold opacity-70 group-hover:opacity-100 transition-opacity">Learn More</span>
+                                <svg id="icon-acc-amazon" class="w-5 h-5 transform transition-transform duration-300 text-slate-400 group-hover:text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <!-- Smooth Collapse Container -->
+                        <div id="content-acc-amazon" class="grid transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0">
+                            <div class="overflow-hidden">
+                                <div class="px-6 pb-6 pt-2 md:px-8 md:pb-8 border-t border-slate-100 bg-slate-50/40 space-y-6">
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div class="space-y-2">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-slate-400">📋</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Business Context</h4>
+                                            </div>
+                                            <p class="text-slate-700 leading-relaxed text-sm">
+                                                Amazon serves millions of customers every day. Not every customer behaves the same. Some buy every week, while others haven't ordered for months.
+                                            </p>
+                                        </div>
+                                        <div class="space-y-2 bg-blue-50/30 border border-blue-100/50 p-4 rounded-xl">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-blue-600">❓</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-blue-600">Business Question</h4>
+                                            </div>
+                                            <p class="text-slate-900 font-semibold leading-relaxed text-sm">
+                                                Which customers are our most loyal?
+                                            </p>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-slate-400">⚡</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Why SQL?</h4>
+                                            </div>
+                                            <p class="text-slate-700 leading-relaxed text-sm">
+                                                SQL groups customer orders, counts individual purchases, and automatically segments customers by loyalty tier.
+                                            </p>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-slate-400">📈</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Business Outcome</h4>
+                                            </div>
+                                            <div class="flex flex-wrap gap-2 pt-1">
+                                                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full border border-emerald-100">Personalized offers</span>
+                                                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full border border-emerald-100">Better customer retention</span>
+                                                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full border border-emerald-100">Higher lifetime value</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pt-4 border-t border-slate-100 flex justify-end">
+                                        <a href="#basics" class="inline-flex items-center space-x-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group/btn">
+                                            <span>Start Learning SQL</span>
+                                            <svg class="w-4 h-4 transform transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 3: Banking -->
+                    <div class="border border-slate-200 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+                        <button onclick="toggleAccordion('acc-banking')" class="w-full text-left p-6 flex justify-between items-center focus:outline-none group">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110">
+                                    💳
+                                </div>
+                                <div class="space-y-0.5">
+                                    <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Banking Case</span>
+                                    <h3 class="font-bold text-slate-800 text-base md:text-lg group-hover:text-blue-600 transition-colors">
+                                        How do banks detect fraud?
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2 text-slate-500 shrink-0">
+                                <span class="hidden sm:inline text-xs uppercase tracking-wider font-semibold opacity-70 group-hover:opacity-100 transition-opacity">Learn More</span>
+                                <svg id="icon-acc-banking" class="w-5 h-5 transform transition-transform duration-300 text-slate-400 group-hover:text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <!-- Smooth Collapse Container -->
+                        <div id="content-acc-banking" class="grid transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0">
+                            <div class="overflow-hidden">
+                                <div class="px-6 pb-6 pt-2 md:px-8 md:pb-8 border-t border-slate-100 bg-slate-50/40 space-y-6">
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div class="space-y-2">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-slate-400">📋</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Business Context</h4>
+                                            </div>
+                                            <p class="text-slate-700 leading-relaxed text-sm">
+                                                Banks process millions of transactions every day. Among them may be fraudulent activity.
+                                            </p>
+                                        </div>
+                                        <div class="space-y-2 bg-blue-50/30 border border-blue-100/50 p-4 rounded-xl">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-blue-600">❓</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-blue-600">Business Question</h4>
+                                            </div>
+                                            <p class="text-slate-900 font-semibold leading-relaxed text-sm">
+                                                Which transactions require immediate investigation?
+                                            </p>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-slate-400">⚡</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Why SQL?</h4>
+                                            </div>
+                                            <p class="text-slate-700 leading-relaxed text-sm">
+                                                SQL filters millions of transactions in real-time, instantly isolating patterns that match fraud risk parameters.
+                                            </p>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-slate-400">📈</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Business Outcome</h4>
+                                            </div>
+                                            <div class="flex flex-wrap gap-2 pt-1">
+                                                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full border border-emerald-100">Reduced fraud</span>
+                                                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full border border-emerald-100">Faster investigations</span>
+                                                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full border border-emerald-100">Better customer trust</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pt-4 border-t border-slate-100 flex justify-end">
+                                        <a href="#basics" class="inline-flex items-center space-x-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group/btn">
+                                            <span>Start Learning SQL</span>
+                                            <svg class="w-4 h-4 transform transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 4: Blinkit -->
+                    <div class="border border-slate-200 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+                        <button onclick="toggleAccordion('acc-blinkit')" class="w-full text-left p-6 flex justify-between items-center focus:outline-none group">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-lime-50 border border-lime-100 flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110">
+                                    🚚
+                                </div>
+                                <div class="space-y-0.5">
+                                    <span class="text-xs font-bold text-lime-700 uppercase tracking-wider">Blinkit Case</span>
+                                    <h3 class="font-bold text-slate-800 text-base md:text-lg group-hover:text-blue-600 transition-colors">
+                                        How does Blinkit track delivery delays?
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2 text-slate-500 shrink-0">
+                                <span class="hidden sm:inline text-xs uppercase tracking-wider font-semibold opacity-70 group-hover:opacity-100 transition-opacity">Learn More</span>
+                                <svg id="icon-acc-blinkit" class="w-5 h-5 transform transition-transform duration-300 text-slate-400 group-hover:text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <!-- Smooth Collapse Container -->
+                        <div id="content-acc-blinkit" class="grid transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0">
+                            <div class="overflow-hidden">
+                                <div class="px-6 pb-6 pt-2 md:px-8 md:pb-8 border-t border-slate-100 bg-slate-50/40 space-y-6">
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div class="space-y-2">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-slate-400">📋</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Business Context</h4>
+                                            </div>
+                                            <p class="text-slate-700 leading-relaxed text-sm">
+                                                Blinkit promises deliveries within minutes. Operations teams constantly monitor delivery performance.
+                                            </p>
+                                        </div>
+                                        <div class="space-y-2 bg-blue-50/30 border border-blue-100/50 p-4 rounded-xl">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-blue-600">❓</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-blue-600">Business Question</h4>
+                                            </div>
+                                            <p class="text-slate-900 font-semibold leading-relaxed text-sm">
+                                                Which cities are experiencing delivery delays?
+                                            </p>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-slate-400">⚡</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Why SQL?</h4>
+                                            </div>
+                                            <p class="text-slate-700 leading-relaxed text-sm">
+                                                SQL aggregates timestamps across millions of orders to calculate and flag cities with high average delivery times.
+                                            </p>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-slate-400">📈</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Business Outcome</h4>
+                                            </div>
+                                            <div class="flex flex-wrap gap-2 pt-1">
+                                                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full border border-emerald-100">Better delivery operations</span>
+                                                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full border border-emerald-100">Improved customer satisfaction</span>
+                                                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full border border-emerald-100">Lower delivery costs</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pt-4 border-t border-slate-100 flex justify-end">
+                                        <a href="#basics" class="inline-flex items-center space-x-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group/btn">
+                                            <span>Start Learning SQL</span>
+                                            <svg class="w-4 h-4 transform transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion Item 5: Hospital -->
+                    <div class="border border-slate-200 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300">
+                        <button onclick="toggleAccordion('acc-hospital')" class="w-full text-left p-6 flex justify-between items-center focus:outline-none group">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110">
+                                    🏥
+                                </div>
+                                <div class="space-y-0.5">
+                                    <span class="text-xs font-bold text-rose-600 uppercase tracking-wider">Hospital Case</span>
+                                    <h3 class="font-bold text-slate-800 text-base md:text-lg group-hover:text-blue-600 transition-colors">
+                                        How do hospitals optimize staffing?
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2 text-slate-500 shrink-0">
+                                <span class="hidden sm:inline text-xs uppercase tracking-wider font-semibold opacity-70 group-hover:opacity-100 transition-opacity">Learn More</span>
+                                <svg id="icon-acc-hospital" class="w-5 h-5 transform transition-transform duration-300 text-slate-400 group-hover:text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </div>
+                        </button>
+                        
+                        <!-- Smooth Collapse Container -->
+                        <div id="content-acc-hospital" class="grid transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0">
+                            <div class="overflow-hidden">
+                                <div class="px-6 pb-6 pt-2 md:px-8 md:pb-8 border-t border-slate-100 bg-slate-50/40 space-y-6">
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div class="space-y-2">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-slate-400">📋</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Business Context</h4>
+                                            </div>
+                                            <p class="text-slate-700 leading-relaxed text-sm">
+                                                Hospitals handle thousands of patient visits every day. Management needs to allocate doctors and beds efficiently.
+                                            </p>
+                                        </div>
+                                        <div class="space-y-2 bg-blue-50/30 border border-blue-100/50 p-4 rounded-xl">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-blue-600">❓</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-blue-600">Business Question</h4>
+                                            </div>
+                                            <p class="text-slate-900 font-semibold leading-relaxed text-sm">
+                                                Which department receives the highest number of patients?
+                                            </p>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-slate-400">⚡</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Why SQL?</h4>
+                                            </div>
+                                            <p class="text-slate-700 leading-relaxed text-sm">
+                                                SQL aggregates and groups patient visit data, providing management with accurate operational insights for resource distribution.
+                                            </p>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="text-slate-400">📈</span>
+                                                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500">Business Outcome</h4>
+                                            </div>
+                                            <div class="flex flex-wrap gap-2 pt-1">
+                                                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full border border-emerald-100">Better staffing</span>
+                                                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full border border-emerald-100">Improved patient care</span>
+                                                <span class="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full border border-emerald-100">Efficient resource planning</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pt-4 border-t border-slate-100 flex justify-end">
+                                        <a href="#basics" class="inline-flex items-center space-x-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors group/btn">
+                                            <span>Start Learning SQL</span>
+                                            <svg class="w-4 h-4 transform transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pattern Card -->
+                <div class="relative bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-950 text-white rounded-3xl p-8 md:p-12 shadow-xl overflow-hidden border border-slate-800">
+                    <div class="absolute -top-10 -right-10 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                    
+                    <div class="relative space-y-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-3xl shadow-inner backdrop-blur">
+                                💡
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight">Notice the Pattern?</h3>
+                        </div>
+                        
+                        <p class="text-slate-300 text-lg leading-relaxed max-w-3xl">
+                            Every organization, regardless of its domain or scale, asks highly structured operational questions:
+                        </p>
+                        
+                        <div class="grid md:grid-cols-2 gap-4 text-slate-200">
+                            <div class="flex items-start space-x-3 p-3 bg-white/5 rounded-xl border border-white/5 hover:bg-white/10 transition-colors">
+                                <span class="text-orange-500 font-bold text-lg leading-none">🍔</span>
+                                <span class="text-sm font-medium">Which products sell the most?</span>
+                            </div>
+                            <div class="flex items-start space-x-3 p-3 bg-white/5 rounded-xl border border-white/5 hover:bg-white/10 transition-colors">
+                                <span class="text-amber-500 font-bold text-lg leading-none">🛒</span>
+                                <span class="text-sm font-medium">Which customers are most valuable?</span>
+                            </div>
+                            <div class="flex items-start space-x-3 p-3 bg-white/5 rounded-xl border border-white/5 hover:bg-white/10 transition-colors">
+                                <span class="text-lime-500 font-bold text-lg leading-none">🚚</span>
+                                <span class="text-sm font-medium">Which city performs best?</span>
+                            </div>
+                            <div class="flex items-start space-x-3 p-3 bg-white/5 rounded-xl border border-white/5 hover:bg-white/10 transition-colors">
+                                <span class="text-indigo-400 font-bold text-lg leading-none">💳</span>
+                                <span class="text-sm font-medium">Which transactions look suspicious?</span>
+                            </div>
+                            <div class="flex items-start space-x-3 p-3 bg-white/5 rounded-xl border border-white/5 hover:bg-white/10 transition-colors md:col-span-2">
+                                <span class="text-rose-400 font-bold text-lg leading-none">🏥</span>
+                                <span class="text-sm font-medium">Which department needs more resources?</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-6 border-t border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                            <p class="text-slate-350 text-base max-w-xl leading-relaxed">
+                                <strong class="text-white">SQL</strong> is simply the language that helps answer these business questions using data. Instead of learning raw commands, we study these pattern-based questions.
+                            </p>
+                            <a href="#basics" class="inline-flex items-center justify-center px-6 py-3.5 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold rounded-xl shadow-lg hover:shadow-blue-500/20 transition-all duration-300 whitespace-nowrap text-sm group">
+                                <span>Start Learning SQL</span>
+                                <svg class="w-4 h-4 ml-2 transform transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section: Your Career's Lifeblood -->
+        <section id="career-impact" class="py-16 px-6 bg-white border-t border-slate-200">
+            <div class="max-w-4xl mx-auto">
+                <div class="p-8 md:p-10 rounded-3xl bg-indigo-50/30 border border-indigo-100/50 relative overflow-hidden">
+                    <!-- Subtle background graphic/glow -->
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                    
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8 relative z-10">
+                        <div class="space-y-4 max-w-xl">
+                            <div class="inline-flex items-center space-x-2 px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-bold uppercase tracking-wider">
+                                🚀 Post-MBA Leadership Foundation
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
+                                The Lifeblood of Analytics &amp; Transformation
+                            </h3>
+                            <p class="text-slate-650 text-base leading-relaxed">
+                                Beyond being your daily career "bread and butter," SQL is the absolute <strong>lifeblood of modern business roles</strong>. Whether you step into <strong class="text-slate-800">Digital Transformation</strong>, <strong class="text-slate-800">Management Consulting</strong>, <strong class="text-slate-850">Product Management</strong>, or any strategic <strong class="text-slate-800">Analytics &amp; Data role</strong>, database querying is the core infrastructure.
+                            </p>
+                            <p class="text-slate-650 text-base leading-relaxed">
+                                In these domains, you aren't just reading static reports—you are designing the logic that drives enterprise decisions. Knowing SQL means you can independently validate trends, architect systems, and lead digital initiatives with absolute authority.
+                            </p>
+                        </div>
+                        
+                        <div class="flex-shrink-0 bg-white p-6 rounded-2xl border border-indigo-100/80 shadow-sm space-y-4 max-w-xs md:w-64 text-center mx-auto md:mx-0">
+                            <div class="text-4xl">⚡</div>
+                            <blockquote class="text-sm font-semibold italic text-slate-700 leading-relaxed">
+                                "Dashboards will break. Presentations will fade. But the SQL query that uncovers the strategic insight is the ground truth."
+                            </blockquote>
+                            <div class="text-xs text-slate-400 font-bold uppercase tracking-wider">— Every Data-Driven Leader</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="basics" class="py-24 px-6 bg-slate-50 border-y border-slate-200">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16 space-y-4">
@@ -358,6 +858,83 @@
                         </div>
                         <div class="mt-4 pt-4 border-t border-slate-100 text-sm text-slate-500 italic">
                             Syntax: SELECT DISTINCT country FROM Customers;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section: Relational Schema Blueprint -->
+        <section id="schema" class="py-24 px-6 bg-white border-t border-slate-200">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 space-y-4">
+                    <div class="inline-block px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-bold uppercase tracking-wider">
+                        Business Architecture
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Relational Blueprint: The Business Data Model</h2>
+                    <p class="text-slate-655 text-lg max-w-2xl mx-auto">
+                        A database schema isn't just code—it is a map of physical business activities, transactions, and supply chain fulfillment.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <!-- Left: Schema Image wrapper -->
+                    <div class="lg:col-span-6 bg-slate-50 p-6 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition duration-300">
+                        <div class="flex space-x-2 mb-4">
+                            <div class="w-3 h-3 rounded-full bg-slate-300"></div>
+                            <div class="w-3 h-3 rounded-full bg-slate-300"></div>
+                            <div class="w-3 h-3 rounded-full bg-slate-300"></div>
+                        </div>
+                        <img src="schema.png" alt="Programiz Relational Database Schema Diagram" class="w-full h-auto object-contain rounded-2xl border border-slate-200 shadow-inner bg-white" />
+                        <div class="mt-4 text-center text-xs text-slate-400 font-medium">
+                            Visual Schema Mapping: Customers ➔ Orders ➔ Shippings
+                        </div>
+                    </div>
+
+                    <!-- Right: Business Interpretation -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <div class="space-y-2">
+                            <h3 class="text-xl font-bold text-slate-900">How Our Business Data Connects</h3>
+                            <p class="text-slate-650 text-base leading-relaxed">
+                                Before writing SQL queries, a business thinker maps out the relational schema. It helps you identify where data lives and how departments interface. Here is how our practice database is organized:
+                            </p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                                <span class="text-2xl mt-0.5">👤</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-base">1. Customers Table (The Core Entity)</h4>
+                                    <p class="text-slate-650 text-sm leading-relaxed mt-1">
+                                        Represents your customer base. Tracks demographic identifiers like name, age, and country. This table forms the baseline profile for all segmentations.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                                <span class="text-2xl mt-0.5">🛒</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-base">2. Orders Table (The Transactional Layer)</h4>
+                                    <p class="text-slate-655 text-sm leading-relaxed mt-1">
+                                        Represents customer purchases. Tracks details like item purchased and order amount. It connects to the Customers table via the <code class="code-font text-xs text-blue-600 font-bold bg-blue-50 px-1 rounded">customer_id</code> Foreign Key to associate revenue with specific customer profiles.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                                <span class="text-2xl mt-0.5">🚚</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-base">3. Shippings Table (The Fulfillment Stream)</h4>
+                                    <p class="text-slate-655 text-sm leading-relaxed mt-1">
+                                        Represents logistics and fulfillment. Tracks order delivery statuses (Delivered/Pending). It connects to the customer so logistics operations know which customer profile is awaiting shipment.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-5 bg-indigo-50/40 border border-indigo-100 rounded-2xl text-sm text-indigo-950 leading-relaxed italic">
+                            <strong class="text-indigo-900 not-italic block font-bold mb-1">💡 Executive Insight:</strong>
+                            "You cannot analyze relationships that aren't structurally linked. Understanding keys (Primary Keys and Foreign Keys) enables you to cross-reference customer actions, financial transactions, and fulfillment pipelines seamlessly."
                         </div>
                     </div>
                 </div>
@@ -493,27 +1070,32 @@
 
         <section id="joins" class="py-24 px-6 bg-white">
             <div class="max-w-5xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold text-slate-900">Relational Joins Masterclass</h2>
-                    <p class="text-slate-600 mt-2 text-lg">How different types of SQL JOINS alter the final visual dataset
-                        output.</p>
+                <div class="text-center mb-16 space-y-3">
+                    <h2 class="text-3xl font-bold text-slate-900">Relational Joins: Merging Business Dimensions</h2>
+                    <p class="text-slate-655 text-lg max-w-2xl mx-auto">
+                        In business, data lives in silos. The way you <span class="font-bold text-blue-600">JOIN</span> tables dictates which records are connected, which are dropped, and what your final metrics actually show.
+                    </p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-16 items-center">
                     <div
-                        class="flex justify-center relative h-64 items-center bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                        class="flex justify-center relative h-64 items-center bg-slate-50 rounded-2xl p-6 border border-slate-100 overflow-hidden">
+                        <!-- Venn Circle Labels placed clearly at the top -->
+                        <span class="absolute top-4 left-6 text-blue-900 font-extrabold text-xs uppercase tracking-widest z-20 bg-blue-50/90 px-2.5 py-1 rounded-lg border border-blue-200/50 shadow-sm">
+                            Customers Table
+                        </span>
+                        <span class="absolute top-4 right-6 text-indigo-900 font-extrabold text-xs uppercase tracking-widest z-20 bg-indigo-50/90 px-2.5 py-1 rounded-lg border border-indigo-200/50 shadow-sm">
+                            Orders Table
+                        </span>
+
                         <div id="venn-left"
                             class="venn-circle bg-blue-500/20 border-2 border-blue-400 absolute left-12">
-                            <span
-                                class="text-blue-900 -translate-x-12 font-bold text-sm uppercase tracking-wider">Customers</span>
                         </div>
                         <div id="venn-right"
                             class="venn-circle bg-indigo-500/20 border-2 border-indigo-400 absolute right-12">
-                            <span
-                                class="text-indigo-900 translate-x-12 font-bold text-sm uppercase tracking-wider">Orders</span>
                         </div>
                         <div
-                            class="z-10 text-center font-bold text-navy bg-white/90 backdrop-blur-sm px-4 py-2.5 rounded-xl border border-slate-200 shadow-md text-sm">
+                            class="z-10 text-center font-bold text-navy bg-white/95 backdrop-blur-sm px-4 py-2.5 rounded-xl border border-slate-200 shadow-md text-sm max-w-[180px]">
                             <span id="join-viz-title">INNER JOIN</span><br>
                             <span class="text-xs font-normal text-slate-500" id="join-viz-desc">Matching Records
                                 Only</span>
@@ -1271,6 +1853,21 @@
             toast.innerText = "SQL query copied to clipboard!";
             document.body.appendChild(toast);
             setTimeout(() => toast.remove(), 2000);
+        }
+
+        function toggleAccordion(id) {
+            const content = document.getElementById('content-' + id);
+            const icon = document.getElementById('icon-' + id);
+            
+            if (content.classList.contains('grid-rows-[0fr]')) {
+                content.classList.remove('grid-rows-[0fr]', 'opacity-0');
+                content.classList.add('grid-rows-[1fr]', 'opacity-100');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.remove('grid-rows-[1fr]', 'opacity-100');
+                content.classList.add('grid-rows-[0fr]', 'opacity-0');
+                icon.classList.remove('rotate-180');
+            }
         }
 
         // --- STREAMING_CHUNK: Starting the browser initialization pipeline... ---
